@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FirstBook</string>
+    <string name="previous">Prev</string>
+    <string name="speak">Speak</string>
+    <string name="next">Next</string>
+</resources>
+
+

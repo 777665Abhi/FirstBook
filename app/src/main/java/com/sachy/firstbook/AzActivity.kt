@@ -5,18 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech;
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import com.sachy.firstbook.databinding.ActivityMainBinding
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class AzActivity : AppCompatActivity(), View.OnClickListener {
 
     var characterPosition: Int = 0
     private val characterArrays = ArrayList<String>(listOf("A", "B", "C", "D", "E", "F", "G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"))
     private var speakFlag: Boolean = false
     lateinit var binding: ActivityMainBinding
+    lateinit var anim:Animation
 
     lateinit var tts: TextToSpeech
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +44,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.tvCharacter.setOnClickListener(this)
         binding.btNext.setOnClickListener(this)
         binding.btPrevious.setOnClickListener(this)
+        //Setting animation
+        anim = AnimationUtils.loadAnimation(
+            applicationContext,
+            R.anim.anim_rotate);
     }
 
     private fun speak(text: String) {
@@ -63,6 +70,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 characterPosition = ++characterPosition
                 if (characterPosition < characterArrays.size) {
                     binding.tvCharacter.text = characterArrays[characterPosition]
+                    binding.tvCharacter.startAnimation(anim)
+
                 } else {
                     characterPosition = --characterPosition
                 }
@@ -73,6 +82,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     characterPosition = ++characterPosition
                 } else {
                     binding.tvCharacter.text = characterArrays[characterPosition]
+                    binding.tvCharacter.startAnimation(anim)
                 }
             }
 

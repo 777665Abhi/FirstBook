@@ -32,7 +32,13 @@ class HomeActivity : AppCompatActivity() , HomeAdapter.AdapterCallback {
         when(position)
         {
             0->{
-                startActivity(Intent(this,AzActivity::class.java))
+                startActivity(Intent(this,AzActivity::class.java).putExtra("type",0))
+            }
+            1->{
+                startActivity(Intent(this,AzActivity::class.java).putExtra("type",1))
+            }
+            2->{
+                startActivity(Intent(this,AzActivity::class.java).putExtra("type",2))
             }
         }
     }

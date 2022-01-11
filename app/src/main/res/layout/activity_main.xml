@@ -9,37 +9,33 @@
     tools:context=".AzActivity"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Let's learn together"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:layout_marginVertical="8dp"
-        />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
-        android:background="@drawable/back"
-        >
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:background="@drawable/back">-->
+
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/back">
     <TextView
         android:id="@+id/tvCharacter"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="A"
         android:fontFamily="@font/font1"
-        android:textColor="@android:color/holo_purple"
-        android:textSize="350dp"
+        android:textColor="@color/purple_500"
+        android:textSize="300dp"
         android:layout_gravity="center"
         android:gravity="center"
-        /></FrameLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
+        />
+</FrameLayout>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -3,6 +3,7 @@
     android:id="@+id/itemFrame"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
     >
     <TextView
         android:id="@+id/tvCharacter"
@@ -12,6 +13,8 @@
         android:textSize="100dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
         android:background="@drawable/back"/>
 
 </FrameLayout>

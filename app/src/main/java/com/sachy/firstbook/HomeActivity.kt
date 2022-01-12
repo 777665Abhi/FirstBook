@@ -10,6 +10,8 @@ import com.sachy.firstbook.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() , HomeAdapter.AdapterCallback {
     private lateinit var binding: ActivityHomeBinding
     private val data=ArrayList<String>()
+    private var type=0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this,R.layout.activity_home)
@@ -20,6 +22,7 @@ class HomeActivity : AppCompatActivity() , HomeAdapter.AdapterCallback {
         data.add("A")
         data.add("1")
         data.add("अ")
+        data.add("A")
         init()
     }
     private fun init()
@@ -29,17 +32,23 @@ class HomeActivity : AppCompatActivity() , HomeAdapter.AdapterCallback {
     }
 
     override fun itemClick(position:Int) {
+
         when(position)
         {
             0->{
-                startActivity(Intent(this,AzActivity::class.java).putExtra("type",0))
+                type=0
             }
             1->{
-                startActivity(Intent(this,AzActivity::class.java).putExtra("type",1))
+               type=1
             }
             2->{
-                startActivity(Intent(this,AzActivity::class.java).putExtra("type",2))
+                type=2
+            }
+            3->{
+                type=3
             }
         }
+        startActivity(Intent(this,AzActivity::class.java).putExtra("type",type))
+
     }
 }

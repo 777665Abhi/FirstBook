@@ -38,8 +38,9 @@ class AzActivity : AppCompatActivity(), View.OnClickListener {
         when(type)
         {
             0-> characterArrays = ArrayList(listOf("A", "B", "C", "D", "E", "F", "G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"))
-       1-> characterArrays = ArrayList(listOf("1","2","3","4","5","6","7","8","9","10"))
+      1-> characterArrays = ArrayList(listOf("1","2","3","4","5","6","7","8","9","10"))
       2->characterArrays = ArrayList(listOf("1","2"))
+      3->characterArrays = ArrayList(listOf("1","2"))
        }
 
         //Initialize tts
